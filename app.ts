@@ -57,3 +57,8 @@ function agregarAlInicio(item: string): void {
 
 }
 agregarAlInicio("churros y cafe")
+
+function insertarEnPosicion(indice: number, item: string): void {
+menuCafeteria.splice(indice, 0, item)
+}
+insertarEnPosicion(2, "Tostadas con mermelada");
