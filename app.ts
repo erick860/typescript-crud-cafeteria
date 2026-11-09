@@ -62,3 +62,19 @@ function insertarEnPosicion(indice: number, item: string): void {
 menuCafeteria.splice(indice, 0, item)
 }
 insertarEnPosicion(2, "Tostadas con mermelada");
+
+function actualizarProducto(nombreBuscado: string, nuevoNombre: string): void {
+
+    const posicion = menuCafeteria.findIndex((producto) => {
+ return producto.toLowerCase() === nombreBuscado.toLowerCase();
+    });
+
+
+if ( posicion === -1){
+    console.log("producto no encontrado ")
+}else{
+    menuCafeteria.splice(posicion, 1, nuevoNombre);
+}
+}
+actualizarProducto("Café Espresso", "Café Espresso Doble");
+mostrarMenu();
