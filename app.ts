@@ -78,3 +78,4 @@ if ( posicion === -1){
 }
 actualizarProducto("Café Espresso", "Café Espresso Doble");
 mostrarMenu();
+console.log(menuCafeteria);
