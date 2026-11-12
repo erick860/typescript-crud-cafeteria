@@ -125,3 +125,47 @@ function filtrarPorCategoria(categoria: string): void {
 );
     console.log(resultado);
 }
+filtrarPorCategoria("café");
+
+
+
+function ordenarCarta(modo: string): void {
+
+    if (modo === "A-Z") {
+        console.log(menuCafeteria.sort())
+
+    } else if (modo === "Z-A") {
+     console.log(menuCafeteria.sort().reverse())   
+    }
+
+}
+ordenarCarta("A-Z");
+ordenarCarta("Z-A");
+
+
+let copiaMenu = menuCafeteria.slice();
+
+console.log("Menú original:", menuCafeteria);
+console.log("Copia del menú:", copiaMenu);
+
+
+const menuTemporada: string[] = [
+  "Smoothie Menta y Limón",
+  "Frappé Caramelo Crocante",
+  "Waffle con Dulce de Leche"
+];
+
+
+let menuCompleto: string[] = menuCafeteria.concat(menuTemporada);
+console.log(menuCompleto)
+
+let resumenMenu: string = menuCafeteria.reduce((acumulador, producto) => {
+    return acumulador + producto+  ",";
+}, "");
+
+console.log(resumenMenu);
+
+
+const hayArtesanal: boolean = menuCafeteria.some(producto => producto.includes("Artesanal"));
+
+const todosValidos: boolean = menuCafeteria.every(producto => producto.length > 4)
