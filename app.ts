@@ -76,6 +76,52 @@ if ( posicion === -1){
     menuCafeteria.splice(posicion, 1, nuevoNombre);
 }
 }
-actualizarProducto("Café Espresso", "Café Espresso Doble");
+actualizarProducto("Café Espresso Clásico", "Café Espresso Doble");
 mostrarMenu();
 console.log(menuCafeteria);
+
+function eliminarUltimo(): void {
+    const eliminado= menuCafeteria.pop()
+
+    console.log("Producto eliminado:", eliminado);
+}
+eliminarUltimo();
+mostrarMenu();
+
+function eliminarPrimero(): void {
+const eliminado = menuCafeteria.shift()
+console.log("prod eliminado:", eliminado);
+}
+eliminarPrimero();
+function eliminarPorNombre(nombreBuscado: string): void {
+
+    const posicion = menuCafeteria.findIndex((producto) => {
+         return producto.toLowerCase() === nombreBuscado.toLowerCase();
+
+    });
+
+    if (posicion === -1) {
+        console.log("Producto no encontrado");
+    } else {
+         menuCafeteria.splice(posicion, 1,);
+    }
+}
+
+
+function buscarPrimerMatch(termino: string): void {
+
+   const encontrado = menuCafeteria.find((producto) => producto.includes(termino));
+  if (encontrado!==undefined) {
+    console.log("producto encontrado");
+} else {
+    console.log("producto no encontrado")
+}
+}
+
+function filtrarPorCategoria(categoria: string): void {
+
+    const resultado = menuCafeteria.filter((producto) =>
+    producto.toLowerCase().includes(categoria.toLowerCase())
+);
+    console.log(resultado);
+}
